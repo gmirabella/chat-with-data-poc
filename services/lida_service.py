@@ -8,8 +8,9 @@ import base64
 from dotenv import load_dotenv
 import os
 
-load_dotenv()
-openai.api_key = os.getenv('OPENAI_API_KEY')
+#load_dotenv()
+#openai.api_key = os.getenv('OPENAI_API_KEY')
+openai.api_key=st.session_state.get("OPENAI_API_KEY")
 modelName=st.session_state.get("MODEL_NAME")
 
 #Handlers
