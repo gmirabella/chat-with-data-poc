@@ -17,7 +17,7 @@ st.set_page_config(page_title="Chat With Data", page_icon="📖", layout="wide")
 @st.cache_resource
 def display_app_header():
     """Display the header of the Streamlit app."""
-    st.header("🤖 Chat With Data 🤖", divider='red')
+    st.header("🤖 Chat With Data 🤖", divider='rainbow')
 
 
 # Display the header of the app
@@ -36,10 +36,11 @@ if df is not None:
      # Check if the uploaded DataFrame is not empty
      if not df.empty:
          # Handle the OpenAI query and display results in a text
+        st.header('📝 Get Simple Answer 📝', divider='red')
         handle_sample_query(df=df, column_names=column_names)
 
          # Handle the OpenAI query and display results in a chart
-        st.header('📈 Generate a Chart 📈', divider='red')
+        st.header('📈 Generate Chart 📈', divider='red')
         chart_framework_selector(df=df, column_names=column_names)
      else:
         st.write("Warning")

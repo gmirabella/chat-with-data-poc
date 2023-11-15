@@ -32,12 +32,13 @@ def get_data():
 
 
 def persona_selector():
-    persona = st.sidebar.selectbox( 'Select User 👤',("CEO with finance background",
-                                                        "CEO with business analysis background",
+    persona = st.sidebar.selectbox( 'Select Persona 👤',("CEO with strong finance background",
+                                                        "CEO with basic analysis background",
                                                         "CEO with no specific background",
                                                         "CFO with strong analysis background",
-                                                        "Sales Manager with strong commercial background"
+                                                        "Sales Manager with strong commercial background",
                                                         "CTO with development background",
+                                                        "Data Scientist with strong math skill",
                                                         "Standard user with no specific skills"))    
     return persona
 

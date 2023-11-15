@@ -5,8 +5,6 @@ import openai
 from PIL import Image
 from io import BytesIO
 import base64
-from dotenv import load_dotenv
-import os
 
 #load_dotenv()
 #openai.api_key = os.getenv('OPENAI_API_KEY')
@@ -28,7 +26,7 @@ def base64_to_image(base64_string):
 
 
 def lida_summary_service(persona):
-
+    openai.api_key=st.session_state.get("OPENAI_API_KEY")
     text_gen = llm("openai")
     lida = Manager(text_gen)
 
@@ -47,7 +45,9 @@ def lida_summary_service(persona):
             img_summary = base64_to_image(img_base64_string_summary)
             st.image(img_summary)
         except:
-            st.warning("An exception occurred. Cannot generate chart")
+            st.warning("""Unable to generate graph.\n As a beta feature, the AI ​is trying to correlate uncorrelated data.\n
+                          You can always copy the goal content, refine it and use it as a generate chart prompt
+                       """)
         i+= 1
 
 
@@ -62,4 +62,5 @@ def lida_chart_service(user_query):
         img = base64_to_image(img_base64_string)
         st.image(img)
     except:
-        st.warning("An exception occurred. Cannot generate chart")
+         st.warning("""Unable to generate graph.\n As a beta feature, the AI ​​is trying to correlate uncorrelated data. \n You can always refine query and try again
+                    """)
