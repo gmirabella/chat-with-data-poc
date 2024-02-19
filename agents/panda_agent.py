@@ -1,4 +1,4 @@
-from langchain_openai import ChatOpenAI as langOpenAI
+from langchain_community.chat_models import ChatOpenAI as langOpenAI
 from langchain_experimental.agents import create_pandas_dataframe_agent
 import streamlit as st
 from pandasai import PandasAI

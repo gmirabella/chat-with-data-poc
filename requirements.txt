@@ -19,7 +19,7 @@ idna==3.4
 importlib-metadata==6.6.0
 Jinja2==3.1.2
 jsonschema==4.17.3
-langchain==0.1.7
+langchain
 markdown-it-py==2.2.0
 MarkupSafe==2.1.2
 marshmallow==3.19.0
@@ -31,7 +31,7 @@ numexpr==2.8.4
 numpy==1.24.3
 openai
 openapi-schema-pydantic==1.2.4
-packaging==23.1
+packaging==23.2
 pandas==2.0.2
 Pillow==9.5.0
 protobuf==4.23.2
@@ -52,7 +52,7 @@ rich==13.4.1
 six==1.16.0
 smmap==5.0.0
 SQLAlchemy==2.0.15
-streamlit
+streamlit==1.31.0
 streamlit-chat
 tabulate==0.9.0
 tenacity==8.2.2
@@ -61,7 +61,7 @@ toolz==0.12.0
 tornado==6.3.2
 tqdm==4.65.0
 typing-inspect==0.9.0
-typing_extensions==4.6.3
+typing_extensions==4.7
 tzdata==2023.3
 tzlocal==4.3
 urllib3==2.0.2
@@ -70,10 +70,12 @@ watchdog==3.0.0
 yarl==1.9.2
 zipp==3.15.0
 seaborn
-matplotlib
+matplotlib==3.7.0
 PandasAI
 numpy
 scikit-learn
 lida
 langchain_openai
+langchain_community
+langchain_core
 langchain_experimental
