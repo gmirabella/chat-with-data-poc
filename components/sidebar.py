@@ -32,7 +32,8 @@ def sidebar():
             value=os.environ.get("OPENAI_API_KEY", None)
             or st.session_state.get("OPENAI_API_KEY", ""),
         )
-        model_name = st.selectbox('Select Model',("gpt-3.5-turbo-0301","gpt-3.5-turbo", "gpt4-turbo", "-"), help="OpenAI models are advanced language models designed for various tasks. Versions like GPT-3.5 provide powerful natural language processing. Newer versions may offer improved capabilities, training on diverse data for better performance. Explore the right version for your needs!")    
+        model_name = st.selectbox('Select Model',("gpt-3.5-turbo-0301","gpt-3.5-turbo", "gpt4-turbo", "gpt-3.5-turbo-instruct","-"), 
+                                  help="OpenAI models are advanced language models designed for various tasks. Versions like GPT-3.5 provide powerful natural language processing. Newer versions may offer improved capabilities, training on diverse data for better performance. Explore the right version for your needs!")    
 
 
         st.session_state["OPENAI_API_KEY"] = api_key_input

@@ -109,3 +109,5 @@ frontend/cypress/snapshots/linux/1x
 env
 filename.csv
 .secrets
+.streamlit/
+.p-env/

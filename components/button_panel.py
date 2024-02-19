@@ -4,7 +4,7 @@ from services.lida_service import handle_lida_summary
 from utils import persona_selector
 
 def generate_buttons(data, column_names):
-    on = st.sidebar.toggle('View Table Data')
+    on = st.sidebar.checkbox('View Table Data')
     if on:
         st.write(data) 
         if data.isnull().sum().any():
