@@ -1,12 +1,15 @@
-from langchain import OpenAI as langOpenAI
-from langchain.agents import create_pandas_dataframe_agent, AgentType
+from langchain_openai import ChatOpenAI as langOpenAI
+from langchain_experimental.agents import create_pandas_dataframe_agent
 import streamlit as st
 from pandasai import PandasAI
 from pandasai.llm.openai import OpenAI as pandaOpenAI
 
-
+''' TODO 
+The gpt version is hardcoded because it is necessary to check
+ whether other versions chosen by the user can be used with upgrades
+'''
 def create_panda_df_agent(df: str):
-    llm = langOpenAI(openai_api_key=st.session_state.get("OPENAI_API_KEY"))
+    llm = langOpenAI(model="gpt-3.5-turbo", temperature=0)
     #llm = langOpenAI(openai_api_key="KEY")
 
     # Create a Pandas DataFrame agent.
@@ -14,7 +17,7 @@ def create_panda_df_agent(df: str):
         llm, 
         df, 
         verbose=True, 
-        agent_type=AgentType.CHAT_CONVERSATIONAL_REACT_DESCRIPTION
+        agent_type="openai-tools"
         )
 
 def create_pandas_ai_agent():

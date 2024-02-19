@@ -19,7 +19,7 @@ idna==3.4
 importlib-metadata==6.6.0
 Jinja2==3.1.2
 jsonschema==4.17.3
-langchain==0.0.188
+langchain==0.1.7
 markdown-it-py==2.2.0
 MarkupSafe==2.1.2
 marshmallow==3.19.0
@@ -29,7 +29,7 @@ multidict==6.0.4
 mypy-extensions==1.0.0
 numexpr==2.8.4
 numpy==1.24.3
-openai==0.28
+openai==1.0.0
 openapi-schema-pydantic==1.2.4
 packaging==23.1
 pandas==2.0.2
@@ -75,3 +75,5 @@ PandasAI
 numpy
 scikit-learn
 lida
+langchain_openai
+langchain_experimental

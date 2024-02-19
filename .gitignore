@@ -110,4 +110,4 @@ env
 filename.csv
 .secrets
 .streamlit/
-.p-env/
+p-env/
