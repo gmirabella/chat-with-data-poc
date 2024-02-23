@@ -18,7 +18,8 @@ load_dotenv()
 
 def sidebar():
     with st.sidebar:
-        st.markdown(
+        '''
+            st.markdown(
             "## How to use\n"
             "1. Enter your [OpenAI API key](https://platform.openai.com/account/api-keys) below 🔑\n"  # noqa: E501
             "2. Upload a csv file 📄\n"
@@ -32,9 +33,11 @@ def sidebar():
             value=os.environ.get("OPENAI_API_KEY", None)
             or st.session_state.get("OPENAI_API_KEY", ""),
         )
+        '''
+        st.image("images/akqa-logo.png")
         model_name = st.selectbox('Select Model',("gpt-3.5-turbo-0301","gpt-3.5-turbo", "gpt4-turbo", "gpt-3.5-turbo-instruct","-"), 
                                   help="OpenAI models are advanced language models designed for various tasks. Versions like GPT-3.5 provide powerful natural language processing. Newer versions may offer improved capabilities, training on diverse data for better performance. Explore the right version for your needs!")    
 
 
-        st.session_state["OPENAI_API_KEY"] = api_key_input
+        st.session_state["OPENAI_API_KEY"] = os.environ.get("OPENAI_API_KEY", None)
         st.session_state["MODEL_NAME"] = model_name
